@@ -1,8 +1,12 @@
 import Carousel from 'react-bootstrap/Carousel';
-import { Container } from 'react-bootstrap';
+import { Card, Button, Container, Row } from 'react-bootstrap';
+import instituicoesEnsino from '.datasets/censoEscolar.jsx'
 import './Main.css';
 
 const Main = () => {
+
+  let instituicoesEnsinoJson = [...instituicoesEnsino];
+
   return (
     <main className="mt-4"> {/* margin-top de 1.5rem */}
       <Container>
@@ -46,6 +50,23 @@ const Main = () => {
           </Carousel.Item>
         </Carousel>
       </Container>
+
+      {/* ADICIONANDO CARDS */}
+
+      <Container>
+        <Row>
+          {instituicoesEnsinoJson.map((instituicoesEnsino) => {
+
+          }
+      
+          )}
+          
+        </Row>
+      </Container>
+
+      
+
+  
     </main>
   )
 }
