@@ -1,6 +1,7 @@
 import Carousel from 'react-bootstrap/Carousel';
-import { Card, Button, Container, Row } from 'react-bootstrap';
-import instituicoesEnsino from '.datasets/censoEscolar.jsx'
+import { Card, Button, Container, Row, Col } from 'react-bootstrap';
+import Carrossel from './Carrossel.jsx';
+import instituicoesEnsino from '../datasets/censoescolar.js';
 import './Main.css';
 
 const Main = () => {
@@ -9,64 +10,34 @@ const Main = () => {
 
   return (
     <main className="mt-4"> {/* margin-top de 1.5rem */}
-      <Container>
-        <Carousel>
-          <Carousel.Item>
-            <img
-              className="d-block w-100 carousel-img"
-              src="/img/escola1.jpg"
-              alt="First slide"
-            />
-            <Carousel.Caption>
-              <h3>First slide label</h3>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-
-          <Carousel.Item>
-            <img
-              className="d-block w-100 carousel-img"
-              src="/img/escola2.jpg"
-              alt="First slide"
-            />
-            <Carousel.Caption>
-              <h3>Second slide label</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-
-          <Carousel.Item>
-            <img
-              className="d-block w-100 carousel-img"
-              src="/img/escola3.jpg"
-              alt="First slide"
-            />
-            <Carousel.Caption>
-              <h3>Third slide label</h3>
-              <p>
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-              </p>
-            </Carousel.Caption>
-          </Carousel.Item>
-        </Carousel>
-      </Container>
+      
+      <Carrossel/>
 
       {/* ADICIONANDO CARDS */}
 
       <Container>
         <Row>
           {instituicoesEnsinoJson.map((instituicoesEnsino) => {
-
-          }
-      
-          )}
+            return (
+              <Col className="mb-4">
+                <Card>
+                  <div className="card-img-wrapper">
+                    <Card.Img variant="top" src={instituicoesEnsino.urlImagem} className="card-img-fixed"/>
+                  </div>
+                  <Card.Body>
+                    <Card.Title>{instituicoesEnsino.nome}</Card.Title>
+                    <Card.Text>
+                      Município: {instituicoesEnsino.municipio}
+                    </Card.Text>
+                    <Button variant="primary">Go somewhere</Button>
+                  </Card.Body>
+                </Card>
+              </Col>
+            );
+          })}
           
         </Row>
       </Container>
-
-      
-
-  
     </main>
   )
 }
