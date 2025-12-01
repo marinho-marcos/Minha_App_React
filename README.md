@@ -11,7 +11,7 @@ Exibir de forma interativa e responsiva as **Top 3 Escolas** com maior número d
 A aplicação segue uma arquitetura baseada em componentes, onde a lógica de negócio principal está no componente `Main.jsx`.
 
 ### 1. Fonte de Dados (`src/datasets`)
-O projeto não consome uma API em tempo real. Ele lê o arquivo estático `dados_censo_pb.json`, que foi gerado por um script Python (`CensoEscolarDataApp`).
+O projeto não consome uma API em tempo real. Ele lê o arquivo estático `dados_censo_pb.json`, que foi gerado por um script Python ([`CensoEscolarDataApp`](https://github.com/marinho-marcos/CensoEscolarDataApp)).
 
 ### 2. Processamento de Dados
 Como o JSON contém todas as escolas do estado, o React realiza a filtragem final no navegador:
